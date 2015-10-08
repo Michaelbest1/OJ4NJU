@@ -19,17 +19,20 @@ $description="";
 
         $title=$_POST['title'];
         $private=$_POST['private'];
+        $type=$_POST['type'];
         $password=$_POST['password'];
         $description=$_POST['description'];
         if (get_magic_quotes_gpc ()){
                 $title = stripslashes ($title);
                 $private = stripslashes ($private);
+				$type= stripslashes ($type);
                 $password = stripslashes ($password);
                 $description = stripslashes ($description);
         }
 
         $title=mysql_real_escape_string($title);
         $private=mysql_real_escape_string($private);
+        $type=mysql_real_escape_string($type);
         $password=mysql_real_escape_string($password);
         $description=mysql_real_escape_string($description);
 
@@ -42,8 +45,8 @@ $description="";
 $langmask=((1<<count($language_ext))-1)&(~$langmask);
 	//echo $langmask;	
 	
-        $sql="INSERT INTO `contest`(`title`,`start_time`,`end_time`,`private`,`langmask`,`description`,`password`)
-                VALUES('$title','$starttime','$endtime','$private',$langmask,'$description','$password')";
+        $sql="INSERT INTO `contest`(`title`,`start_time`,`end_time`,`private`,`type`,`langmask`,`description`,`password`)
+                VALUES('$title','$starttime','$endtime','$private','$type',$langmask,'$description','$password')";
 	echo $sql;
 	mysql_query($sql) or die(mysql_error());
 	$cid=mysql_insert_id();
@@ -160,6 +163,12 @@ $lang_count=count($language_ext);
         </select>
 	<?php require_once("../include/set_post_key.php");?>
 	<br>Problems:<input class=input-xxlarge type=text size=60 name=cproblem value="<?php echo isset($plist)?$plist:""?>">
+	<br>
+	Type:
+	<select name=type>
+		<option value=0>Assignment</option>
+		<option value=1>Contest</option>
+	</select>
 	<br>
 	<p align=left>Description:<br><!--<textarea rows=13 name=description cols=80></textarea>-->
 

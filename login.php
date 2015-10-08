@@ -26,9 +26,11 @@
 		echo mysql_error();
 		while ($result&&$row=mysql_fetch_assoc($result))
 			$_SESSION[$row['rightstr']]=true;
-		echo "<script language='javascript'>\n";
+		/*echo "<script language='javascript'>\n";
 		echo "history.go(-2);\n";
-		echo "</script>";
+		echo "</script>";*/
+		$targetURI="assignment.php";
+		header("Location: $targetURI");
 	}else{
 		
 		echo "<script language='javascript'>\n";

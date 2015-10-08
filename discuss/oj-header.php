@@ -6,9 +6,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel=stylesheet href='../template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
-<?php function checkcontest($MSG_CONTEST){
+<?php function checkcontest($MSG_CONTEST, $type){
 		require_once("../include/db_info.inc.php");
-		$sql="SELECT count(*) FROM `contest` WHERE `end_time`>NOW() AND `defunct`='N'";
+		$sql="SELECT count(*) FROM `contest` WHERE `end_time`>NOW() AND `defunct`='N' and `type`='$type'";
 		$result=mysql_query($sql);
 		$row=mysql_fetch_row($result);
 		if (intval($row[0])==0) $retmsg=$MSG_CONTEST;

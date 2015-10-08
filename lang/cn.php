@@ -5,7 +5,8 @@
 	$MSG_PROBLEMS="题目";
 	$MSG_STATUS="状态";
 	$MSG_RANKLIST="排名";
-	$MSG_CONTEST="作业&考试";
+	$MSG_CONTEST="考试";
+	$MSG_ASSIGNMENT="作业";
   $MSG_RECENT_CONTEST="名校联赛";
 	$MSG_LOGOUT="注销";
 	$MSG_LOGIN="登录";
@@ -80,6 +81,7 @@ $MSG_Compile_OK="人品问题-愚人节快乐";
 	$MSG_TITLE="标题";
 	$MSG_SOURCE="来源";
 	$MSG_SUBMIT="提交";
+	$MSG_TOSUBMIT="做题";
 	
 	//ranklist.php
 	$MSG_Number="名次";

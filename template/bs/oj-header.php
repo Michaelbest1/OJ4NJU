@@ -7,11 +7,11 @@
 <div id=subhead>
 	  <div id=menu class=navbar>
 	  <?php $ACTIVE="btn-warning";?>
+		<!--
 		<a  class='btn'  href="<?php echo $OJ_HOME?>"><i class="icon-home"></i>
 		<?php echo $MSG_HOME?>						
 		</a>
 		
-		<!--
 		<a  class='btn <?php if ($url==$OJ_BBS.".php") echo " $ACTIVE";?>'  href="bbs.php">
 		<i class="icon-comment"></i><?php echo $MSG_BBS?></a>
 		<a  class='btn <?php if ($url=="problemset.php") echo " $ACTIVE";?>' href="problemset.php">
@@ -21,8 +21,11 @@
 	  <!-- <a  class='btn <?php if ($url=="submitpage.php") echo " $ACTIVE";?>' href="submitpage.php">
 		<i class="icon-pencil"></i><?php echo "编辑器"?></a>
 		-->
+		<a class='btn <?php if ($url=="assignment.php") echo "  $ACTIVE";?>'  href="assignment.php">
+		<i class="icon-fire"></i><?php echo checkcontest($MSG_ASSIGNMENT, 0)?></a>
+
 		<a class='btn <?php if ($url=="contest.php") echo "  $ACTIVE";?>'  href="contest.php">
-		<i class="icon-fire"></i><?php echo checkcontest($MSG_CONTEST)?></a>
+		<i class="icon-fire"></i><?php echo checkcontest($MSG_CONTEST, 1)?></a>
 
 		<!--
 		<a  class='btn <?php if ($url=="status.php") echo "  $ACTIVE";?>' href="status.php">
